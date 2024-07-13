@@ -6,14 +6,34 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser,createUserWithGoogle} = useContext(AuthContext);
     const handleRegister = (e)=>{
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
+        // const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(email,password);
+        createUser(email,password)
+        .then(res=>{
+            console.log(res.user);
+        })
+        .then(err=>{
+            console.log(err.message);
+        })
     }
+
+    const handleRegisterWithGoogle = ()=>{
+        createUserWithGoogle()
+        .then(res=>{
+            console.log(res.user);
+        })
+        .then(err=>{
+            console.log(err.message);
+        })
+    }
+
+    
     return (
         <div>
             <Navbar></Navbar>
@@ -24,7 +44,7 @@ const Register = () => {
                         <h1 className="text-2xl font-semibold">Register Here!</h1>
                         <p>Hi Welcome back 👋 </p>
                         <div>
-                            <button className="flex items-center gap-x-3 px-2 py-2 rounded font-semibold text-xs bg-[#ffa3be] w-full md:w-3/4"><FcGoogle /> Register With Google</button>
+                            <button onClick={handleRegisterWithGoogle} className="flex items-center gap-x-3 px-2 py-2 rounded font-semibold text-xs bg-[#ffa3be] w-full md:w-3/4"><FcGoogle /> Register With Google</button>
                         </div>
                         <div className="flex items-center w-full md:w-3/4 gap-x-2 justify-center">
                             <hr className="bg-gray-400 p-px flex-1"></hr>
