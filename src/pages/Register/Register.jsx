@@ -2,10 +2,17 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { FcGoogle } from "react-icons/fc";
 import login from '../../assets/login.png';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
     const handleRegister = (e)=>{
         e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
     }
     return (
         <div>

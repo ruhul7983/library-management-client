@@ -29,7 +29,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn text-black bg-[#fff0e7] hover:bg-[#fff0e7] text-base hover:text-orange-300">Our Library</a>
+                <Link to={'/'} className="btn text-black bg-[#fff0e7] hover:bg-[#fff0e7] text-base hover:text-orange-300">Our Library</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
