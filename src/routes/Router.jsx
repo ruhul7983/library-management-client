@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Dashboard from "../admin/Dashboard/Dashboard";
 import BookList from "../admin/BookList/BookList";
+import AddBook from "../admin/AddBook/AddBook";
 
   const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ import BookList from "../admin/BookList/BookList";
         {
             path:"/book-list",
             element:<BookList></BookList>
+        },
+        {
+            path:"/add-book",
+            element:<AddBook></AddBook>
         },
 
       ]
