@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Select Category",
+        "value": "",
+        "image": ""
+    },
+    {
+        "name": "Programming",
+        "value": "programming",
+        "image": "https://example.com/images/programming.jpg"
+    },
+    {
+        "name": "Science fiction",
+        "value": "science_fiction",
+        "image": "https://example.com/images/science_fiction.jpg"
+    },
+    {
+        "name": "Fantasy",
+        "value": "fantasy",
+        "image": "https://example.com/images/fantasy.jpg"
+    },
+    {
+        "name": "Mystery",
+        "value": "mystery",
+        "image": "https://example.com/images/mystery.jpg"
+    },
+    {
+        "name": "Non-fiction",
+        "value": "non_fiction",
+        "image": "https://example.com/images/non_fiction.jpg"
+    },
+    {
+        "name": "Historical",
+        "value": "historical",
+        "image": "https://example.com/images/historical.jpg"
+    },
+    {
+        "name": "Biography",
+        "value": "biography",
+        "image": "https://example.com/images/biography.jpg"
+    },
+    {
+        "name": "Romance",
+        "value": "romance",
+        "image": "https://example.com/images/romance.jpg"
+    },
+    {
+        "name": "Horror",
+        "value": "horror",
+        "image": "https://example.com/images/horror.jpg"
+    },
+    {
+        "name": "Self-help",
+        "value": "self_help",
+        "image": "https://example.com/images/self_help.jpg"
+    }
+]

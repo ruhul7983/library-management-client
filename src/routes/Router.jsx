@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import Dashboard from "../admin/Dashboard/Dashboard";
 import BookList from "../admin/BookList/BookList";
 import AddBook from "../admin/AddBook/AddBook";
+import AddCategory from "../admin/AddCategory/AddCategory";
 
   const router = createBrowserRouter([
     {
@@ -22,11 +23,13 @@ import AddBook from "../admin/AddBook/AddBook";
         },
         {
             path:"/all-books",
-            element:<AllBooks></AllBooks>
+            element:<AllBooks></AllBooks>,
+          
         },
         {
-            path:"/books-details",
-            element:<BooksDetails></BooksDetails>
+            path:"/book/:id",
+            element:<BooksDetails></BooksDetails>,
+            loader:({params})=>fetch(`http://localhost:5000/book/${params.id}`),
         },
         {
             path:"/login",
@@ -47,6 +50,10 @@ import AddBook from "../admin/AddBook/AddBook";
         {
             path:"/add-book",
             element:<AddBook></AddBook>
+        },
+        {
+            path:"/add-category",
+            element:<AddCategory></AddCategory>
         },
 
       ]

@@ -22,8 +22,9 @@ const Dashboard = () => {
                    
                 </div>
 
-                <div className="my-6">
+                <div className="my-6 flex gap-x-3">
                     <Link to={"/add-book"} className="px-3 py-2 rounded bg-blue-400 text-black ">Add Book</Link>
+                    <Link to={"/add-category"} className="px-3 py-2 rounded bg-blue-400 text-black ">Add Category</Link>
                 </div>
 
             </div>

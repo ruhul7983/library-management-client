@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
 import SidebarNav from "../Sidebar/Sidebar";
+import useAxiosSecure from "../../customHooks/useAxiosSecure";
+import BookTable from "./BookTable";
 
 const BookList = () => {
+    const [books, setBooks] = useState([]);
+    const useAxios = useAxiosSecure();
+    useEffect(() => {
+        useAxios.get("/books")
+            .then(res => setBooks(res.data));
+    }, [useAxios])
     return (
         <div className="flex">
             <SidebarNav></SidebarNav>
@@ -19,27 +28,15 @@ const BookList = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            {
+                                books.map((book,index) => <BookTable key={book._id} book={book} index={index+1}></BookTable>)
+                            }
                             <tr>
-                                <th>1</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Littel, Schaden and Vandervort</td>
-                                <td>Canada</td>
-                                <td>12/16/2020</td>
-                                <td>Blue</td>
+
                             </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Hart Hagerty</td>
-                                <td>Desktop Support Technician</td>
-                                <td>Zemlak, Daniel and Leannon</td>
-                                <td>United States</td>
-                                <td>12/5/2020</td>
-                                <td>Purple</td>
-                            </tr>
-                            
+
                         </tbody>
-                        
+
                     </table>
                 </div>
             </div>

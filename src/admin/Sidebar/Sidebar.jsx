@@ -1,4 +1,4 @@
-import { Sidebar, Menu, MenuItem, SubMenu, sidebarClasses } from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem,  sidebarClasses } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 
 
