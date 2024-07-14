@@ -7,6 +7,8 @@ import AllBooks from "../pages/AllBooks/AllBooks";
 import BooksDetails from "../pages/BooksDetails/BooksDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Dashboard from "../admin/Dashboard/Dashboard";
+import BookList from "../admin/BookList/BookList";
 
   const router = createBrowserRouter([
     {
@@ -33,6 +35,15 @@ import Register from "../pages/Register/Register";
             path:"/register",
             element:<Register></Register>
         },
+        {
+            path:"/dashboard",
+            element:<Dashboard></Dashboard>
+        },
+        {
+            path:"/book-list",
+            element:<BookList></BookList>
+        },
+
       ]
     },
   ]);
