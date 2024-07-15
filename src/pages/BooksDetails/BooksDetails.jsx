@@ -1,11 +1,13 @@
 import Navbar from "../Shared/Navbar/Navbar";
-import books from "../../assets/books (1).png";
 import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const BooksDetails = () => {
     const book = useLoaderData();
-    const {bookName,category,title,stock,authorName,imgUrl} = book;
+    const {bookName,category,title,stock,authorName,imgUrl,_id} = book;
+    const {user} = useContext(AuthContext);
     return (
         <div >
             <Navbar></Navbar>
@@ -20,7 +22,10 @@ const BooksDetails = () => {
                     <p >Category: <span className="px-3 py-2 bg-amber-100 text-black rounded">{category}</span></p>
                     <p>In Stock : {stock} Copies Available</p>
                         <div className="px-4 py-2 border border-white w-4/6 rounded"><Link>PDF Download</Link></div>
-                        <div className="px-4 py-2 border border-white text-black w-4/6 rounded bg-[#fff0e7]"><Link>Borrow from library</Link></div>
+                        {
+                            user?<div className="px-4 py-2 border border-white text-black w-4/6 rounded bg-[#fff0e7]"><Link to={`/book-details/borrow-details/${_id}`}>Borrow from library</Link></div>:<div className="px-4 py-2 border border-white text-black w-4/6 rounded bg-[#fff0e7]"><Link to={"/login"}>Borrow from library</Link></div>
+                        }
+                        
                 </div>
             </div>
             <Footer></Footer>

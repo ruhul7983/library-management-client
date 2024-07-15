@@ -25,7 +25,7 @@ const SidebarNav = () => {
 
                     <Link to={"/dashboard"}><MenuItem> Dashboard </MenuItem></Link>
                     <Link to={"/book-list"}><MenuItem> Book List </MenuItem></Link>
-                    <Link ><MenuItem> Dashboard </MenuItem></Link>
+                    <Link to={"/issue-list"}><MenuItem> Issue List </MenuItem></Link>
                 </Menu>
             </Sidebar>
         </div>

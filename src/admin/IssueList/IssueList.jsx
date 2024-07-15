@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import SidebarNav from "../Sidebar/Sidebar";
 import useAxiosSecure from "../../customHooks/useAxiosSecure";
-import BookTable from "./BookTable";
+import BookTable from "../BookList/BookTable";
+import IssueTable from "./IssueTable";
 
-const BookList = () => {
-    const [books, setBooks] = useState([]);
+const IssueList = () => {
+    const [issue, setIssue] = useState([]);
     const useAxios = useAxiosSecure();
     useEffect(() => {
-        useAxios.get("/books")
-            .then(res => setBooks(res.data));
+        useAxios.get("/issues-book")
+            .then(res => setIssue(res.data));
     }, [useAxios])
     return (
         <div className="flex">
@@ -29,7 +30,7 @@ const BookList = () => {
                         </thead>
                         <tbody>
                             {
-                                books.map((book,index) => <BookTable key={book._id} book={book} index={index+1}></BookTable>)
+                                issue.map((book,index) => <IssueTable key={book._id} book={book} index={index+1}></IssueTable>)
                             }
                             
 
@@ -42,4 +43,4 @@ const BookList = () => {
     );
 };
 
-export default BookList;
+export default IssueList;

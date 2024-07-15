@@ -11,6 +11,9 @@ import Dashboard from "../admin/Dashboard/Dashboard";
 import BookList from "../admin/BookList/BookList";
 import AddBook from "../admin/AddBook/AddBook";
 import AddCategory from "../admin/AddCategory/AddCategory";
+import BorrowDetails from "../pages/BooksDetails/BorrowDetails";
+import IssueList from "../admin/IssueList/IssueList";
+import YourIssueList from "../pages/YourIssueList/YourIssueList";
 
   const router = createBrowserRouter([
     {
@@ -54,6 +57,19 @@ import AddCategory from "../admin/AddCategory/AddCategory";
         {
             path:"/add-category",
             element:<AddCategory></AddCategory>
+        },
+        {
+            path:"/issue-list",
+            element:<IssueList></IssueList>
+        },
+        {
+            path:"/your-issue-list",
+            element:<YourIssueList></YourIssueList>
+        },
+        {
+            path:"/book-details/borrow-details/:id",
+            element:<BorrowDetails></BorrowDetails>,
+            loader:({params})=>fetch(`http://localhost:5000/book/${params.id}`),
         },
 
       ]
