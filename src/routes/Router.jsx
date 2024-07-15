@@ -14,6 +14,7 @@ import AddCategory from "../admin/AddCategory/AddCategory";
 import BorrowDetails from "../pages/BooksDetails/BorrowDetails";
 import IssueList from "../admin/IssueList/IssueList";
 import YourIssueList from "../pages/YourIssueList/YourIssueList";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ import YourIssueList from "../pages/YourIssueList/YourIssueList";
         },
         {
             path:"/dashboard",
-            element:<Dashboard></Dashboard>
+            element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
         },
         {
             path:"/book-list",
@@ -64,7 +65,7 @@ import YourIssueList from "../pages/YourIssueList/YourIssueList";
         },
         {
             path:"/your-issue-list",
-            element:<YourIssueList></YourIssueList>
+            element:<PrivateRoute><YourIssueList></YourIssueList></PrivateRoute>
         },
         {
             path:"/book-details/borrow-details/:id",
