@@ -1,6 +1,16 @@
+import useAxiosSecure from "../../customHooks/useAxiosSecure";
 
 const BookTable = ({ book,index }) => {
-    const {bookName,category,title,stock,authorName,imgUrl} = book;
+    const useAxios = useAxiosSecure();
+    const {bookName,category,title,stock,authorName,imgUrl,_id} = book;
+    const handleDelete =(_id)=>{
+        console.log(_id);
+        useAxios.delete(`/delete-book/${_id}`,)
+        .then(res=>{
+            console.log(res.data);
+        })
+
+    }   
     return (
         <tr>
             <th>{index}</th>
@@ -9,7 +19,7 @@ const BookTable = ({ book,index }) => {
             <td>{authorName}</td>
             <td>{category}</td>
             <td>{stock}</td>
-            <td>x</td>
+            <td><button className="p-2" onClick={()=>handleDelete(_id)}>x</button></td>
         </tr>
     );
 };

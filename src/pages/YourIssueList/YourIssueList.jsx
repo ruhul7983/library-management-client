@@ -8,11 +8,25 @@ const YourIssueList = () => {
     const {user} = useContext(AuthContext);
     const [issueList,setIssueList] = useState([]);
     const useAxios = useAxiosSecure();
-    //load data
+    // load data
     useEffect(()=>{
         useAxios.get(`/your-issues-book?email=${user?.email}`)
-        .then(res=>setIssueList(res.data));
+        .then(res=>setIssueList(res.data))
+        .catch(err=>{
+            console.log("err ",err);
+        })
+        
     },[useAxios,user])
+
+    // fetch(`http://localhost:5000/your-issues-book?email=${user?.email}`, {
+    //     method: 'GET',
+    //     credentials: 'include', // This ensures cookies are sent
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }).then(response => response.json())
+    //     .then(data => console.log(data))
+    //     .catch(error => console.error('Error:', error));
     return (
         <div>
             <Navbar></Navbar>

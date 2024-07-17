@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IssueTable = ({book,index}) => {
-    const {bookName,category,title,stock,authorName,imgUrl} = book.book;
+    const {bookName,category,title,stock,authorName,imgUrl} = book;
 
     return (
         <tr>
